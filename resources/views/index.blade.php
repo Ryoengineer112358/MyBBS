@@ -9,9 +9,11 @@
     <div class="container">
         <h1>My BBS</h1>
         <ul>
-            <li>Title</li>
-            <li>Title</li>
-            <li>Title</li>
+            @forelse ($posts as $post)
+                <li>{{ $post }}</li>
+            @empty
+                <li>No posts yet!</li>
+            @endempty
         </ul>
     </div>
 </body>
