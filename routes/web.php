@@ -15,5 +15,5 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/', [PostController::class, 'index']);
-
+// URLの一部をパラメータ化
 Route::get('/posts/{id}', [PostController::class, 'show']);

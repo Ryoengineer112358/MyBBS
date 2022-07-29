@@ -18,9 +18,11 @@ class PostController extends Controller
             ->with(['posts' => $this->posts]);
     }
 
+    // idを引数として渡す
     public function show($id)
     {
-        return view('show')
+        // showというviewを呼び出して、データを渡す
+        return view('posts.show')
             ->with(['post' => $this->posts[$id]]);
     }
 }

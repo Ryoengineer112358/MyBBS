@@ -17,7 +17,7 @@
                 </li>
             @empty
                 <li>No posts yet!</li>
-            @endempty
+            @endforelse
         </ul>
     </div>
 </body>
