@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            // $table->string('title')->nullable(); nullオッケーの書き方
             $table->text('body');
-            $table->timestamps();
+            $table->timestamps(); // created_at, updated_at
         });
     }
 
