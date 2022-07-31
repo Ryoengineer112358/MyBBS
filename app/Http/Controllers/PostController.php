@@ -11,7 +11,7 @@ class PostController extends Controller
     {
         // $posts = Post::all();
         // $posts = Post::orderBy('created_at', 'desc')->get();
-        $posts = Post::latest()->get();
+        $posts = Post::latest()->get(); //上と同じ分になる(新しい順)
 
         return view('index')
             ->with(['posts' => $posts]);
@@ -20,8 +20,9 @@ class PostController extends Controller
     // idを引数として渡す
     public function show($id)
     {
+        $post = Post::findOrFail($id);
         // showというviewを呼び出して、データを渡す
         return view('posts.show')
-            ->with(['post' => $this->posts[$id]]);
+            ->with(['post' => $post]);
     }
 }
