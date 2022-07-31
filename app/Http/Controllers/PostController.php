@@ -6,12 +6,6 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    private $posts = [
-        'Title A',
-        'Title B',
-        'Title C',
-    ];
-
     public function index()
     {
         return view('index')
