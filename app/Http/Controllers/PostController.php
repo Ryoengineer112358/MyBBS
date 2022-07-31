@@ -17,10 +17,9 @@ class PostController extends Controller
             ->with(['posts' => $posts]);
     }
 
-    // idを引数として渡す
-    public function show($id)
+    // idを引数として渡す Implicit Binding
+    public function show(Post $post)
     {
-        $post = Post::findOrFail($id);
         // showというviewを呼び出して、データを渡す
         return view('posts.show')
             ->with(['post' => $post]);
