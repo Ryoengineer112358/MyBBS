@@ -15,7 +15,7 @@
         <div class="form-group">
             <label>
                 Title
-                <input type="text" name="title">
+                <input type="text" name="title" value="{{ old('title') }}">
             </label>
 
             {{-- //@error を使って title に関するエラーがある場合、 @enderror までの処理をしてね --}}
@@ -27,7 +27,7 @@
         <div class="form-group">
             <label>
                 Body
-                <textarea name="body"></textarea>
+                <textarea name="body">{{ old('body') }}</textarea>
             </label>
             @error('body')
                 <div class="error">{{ $message }}</div>
