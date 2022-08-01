@@ -17,9 +17,12 @@
                 Title
                 <input type="text" name="title">
             </label>
+
+            {{-- //@error を使って title に関するエラーがある場合、 @enderror までの処理をしてね --}}
             @error('title')
                 <div class="error">{{ $message }}</div>
             @enderror
+        </div>
         </div>
         <div class="form-group">
             <label>

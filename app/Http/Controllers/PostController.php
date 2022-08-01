@@ -35,6 +35,13 @@ class PostController extends Controller
     //ここでデータを作って保存する
     public function store(Request $request)
     {
+        //入力された値を検証するためのルールを設定
+        //ルールに合致しなかった場合、エラーの情報と共に元のページに戻してくれる
+        $request->validate([
+            'title' => 'required|min:3',
+            'body' => 'required',
+        ])
+
         //Postのインスタンスを作る
         $post = new Post();
 
