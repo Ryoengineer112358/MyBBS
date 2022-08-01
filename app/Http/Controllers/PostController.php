@@ -30,4 +30,23 @@ class PostController extends Controller
         //viewを呼ぶ
         return view('posts.create');
     }
+
+    //フォームから送信されたデータは、ここでRequest型の$requestでまとめて受け取ることができるため
+    //ここでデータを作って保存する
+    public function store(Request $request)
+    {
+        //Postのインスタンスを作る
+        $post = new Post();
+
+        //プロパティに値をセットする
+        $post->title = $request->title;
+        $post->body = $request->body;
+
+        //DBに値を保存
+        $post->save();
+
+        //保存したら一覧に戻る
+        return redirect()
+            ->route('posts.index');
+    }
 }
